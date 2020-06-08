@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Board from '../../components/Board/Board';
-import {checkWinner} from './logic';
+import {checkWinner, AiMove} from './logic';
 import './OnePlayer.css';
 
 const OnePlayer = () =>{
@@ -8,7 +8,7 @@ const OnePlayer = () =>{
     const [turn, setTurn] = useState(false);
 
     const move = (pos) =>{
-        if(board[pos.y][pos.x] != null) return;
+        if(board[pos.y][pos.x] != null) return false;
         let boardClone = JSON.parse(JSON.stringify(  board  ));
         boardClone[pos.y][pos.x] = turn?"X":"O";
         setBoard(boardClone);
@@ -17,7 +17,14 @@ const OnePlayer = () =>{
         else{
             alert(`wygrywa${turn?"X":"O"}`);
         };
+        return true;
     }
+
+    useEffect(() => {
+        if(turn===false) return;
+        let y = AiMove(board);
+        if(y!=null) move(y);
+    }, [turn])
 
 
 
