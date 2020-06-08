@@ -1,0 +1,18 @@
+.Board{
+    font-size: 8vmin;
+    height: 10em;
+    width: 10em;
+    background-color: cadetblue;
+}
+
+.Board .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 33.33%;
+}
+
+.Board .row:nth-of-type(2){
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
+}
