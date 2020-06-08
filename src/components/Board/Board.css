@@ -2,7 +2,7 @@
     font-size: 8vmin;
     height: 10em;
     width: 10em;
-    background-color: cadetblue;
+    background-color: rgba(95, 158, 160, 0);
 }
 
 .Board .row{
@@ -13,6 +13,6 @@
 }
 
 .Board .row:nth-of-type(2){
-    border-top: 3px black solid;
-    border-bottom: 3px black solid;
+    border-top: 3px rgb(240, 240, 240) solid;
+    border-bottom: 3px rgb(240, 240, 240) solid;
 }
